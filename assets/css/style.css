@@ -346,3 +346,18 @@ dialog.peek.closing { animation: peek-out .2s ease forwards; }
 .chips-row .chip { font-size: .84rem; padding: 4px 10px; border-radius: 999px; background: var(--surface-2); border: 1px solid var(--line); color: var(--ink); transition: background .2s, border-color .2s, transform .2s; }
 .chips-row .chip:hover { background: var(--accent-soft); border-color: var(--accent); transform: translateY(-2px); }
 .ai-note { margin-top: 22px; }
+
+/* badge names on hover / focus */
+.kb { position: relative; display: inline-block; outline: none; }
+.kb-tip { position: absolute; bottom: calc(100% + 10px); left: 50%; transform: translate(-50%, 6px) scale(.9); opacity: 0; pointer-events: none;
+  background: var(--ink); color: var(--bg); font: 600 .78rem/1.2 var(--sans); padding: 6px 10px; border-radius: 8px; white-space: nowrap;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, .2); transition: opacity .18s ease, transform .22s cubic-bezier(.3, 1.5, .5, 1); z-index: 5; }
+.kb-tip::after { content: ""; position: absolute; top: 100%; left: 50%; margin-left: -6px; border: 6px solid transparent; border-top-color: var(--ink); }
+.kb:hover .kb-tip, .kb:focus .kb-tip, .kb:focus-visible .kb-tip { opacity: 1; transform: translate(-50%, 0) scale(1); }
+.kb:focus-visible .kbadge { outline: 3px solid var(--accent); outline-offset: 3px; border-radius: 12px; }
+.kb:first-child .kb-tip, .kb:nth-child(2) .kb-tip { left: 0; transform: translate(0, 6px) scale(.9); }
+.kb:first-child:hover .kb-tip, .kb:first-child:focus .kb-tip, .kb:nth-child(2):hover .kb-tip, .kb:nth-child(2):focus .kb-tip { transform: translate(0, 0) scale(1); }
+.kb:first-child .kb-tip::after, .kb:nth-child(2) .kb-tip::after { left: 28px; }
+.kb:last-child .kb-tip, .kb:nth-last-child(2) .kb-tip { left: auto; right: 0; transform: translate(0, 6px) scale(.9); }
+.kb:last-child:hover .kb-tip, .kb:last-child:focus .kb-tip, .kb:nth-last-child(2):hover .kb-tip, .kb:nth-last-child(2):focus .kb-tip { transform: translate(0, 0) scale(1); }
+.kb:last-child .kb-tip::after, .kb:nth-last-child(2) .kb-tip::after { left: auto; right: 22px; }
