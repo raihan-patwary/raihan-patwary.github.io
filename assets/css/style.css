@@ -219,3 +219,4 @@ figure.fig figcaption { color: #4d5359; }
 }
 .hero-grid > * { min-width: 0; }
 .status .badge { white-space: normal; line-height: 1.35; }
+.doodle { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 12px; }
