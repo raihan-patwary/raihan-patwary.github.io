@@ -43,8 +43,8 @@
     <p class="lead">Three short case studies, then the lab, field and survey work behind them. The full code and figures live on GitHub.</p>
     <h2 style="margin-top:28px">Case studies</h2>
     <div class="grid three">
-<a class="card" href="../projects/cattle-weight.html">
-  <div class="thumb"><svg viewBox="0 0 800 400" role="img" aria-label="Thesis pipeline: four side-view photos per cow, split by animal into five folds, then deep learning networks on the photos and classical models on outline measurements, scored per animal">
+<article class="card">
+  <a class="thumb-link" href="../projects/cattle-weight.html" tabindex="-1" aria-hidden="true"><div class="thumb"><svg viewBox="0 0 800 400" role="img" aria-label="Thesis pipeline: four side-view photos per cow, split by animal into five folds, then deep learning networks on the photos and classical models on outline measurements, scored per animal">
 <style>
 .pl-box{fill:var(--surface);stroke:var(--line);stroke-width:2}
 .pl-acc{fill:var(--accent-soft);stroke:var(--accent);stroke-width:2}
@@ -98,35 +98,181 @@
   <text class="pl-t" x="42" y="36" text-anchor="middle">kg</text>
   <text class="pl-s" x="42" y="58" text-anchor="middle">per animal</text>
 </g>
-</svg></div>
+</svg></div></a>
   <div class="card-body">
     <div><span class="badge ongoing">Ongoing</span> <span class="badge">MSc thesis</span></div>
-    <h3>Cattle live weight from photographs</h3>
+    <h3><a href="../projects/cattle-weight.html">Cattle live weight from photographs</a></h3>
     <p>Can ordinary side-view photos replace the scale? Deep learning and classical models compared on Bangladeshi cattle.</p>
     <div class="tags"><span class="tag">PyTorch</span><span class="tag">timm</span><span class="tag">YOLO11</span></div>
-    <span class="more">Read more →</span>
+    <div class="card-actions"><button class="btn ghost peek-btn" type="button" data-peek="peek-cattle">Quick look</button><a class="more" href="../projects/cattle-weight.html">Read more →</a></div>
   </div>
-</a>
-<a class="card" href="../projects/larvalens.html">
-  <div class="thumb"><img src="../assets/figures/larvalens/fig01_hero_light.webp" data-light="../assets/figures/larvalens/fig01_hero_light.webp" data-dark="../assets/figures/larvalens/fig01_hero_dark.webp" alt="One black soldier fly larva: photo, outline, skeleton with width map, and its predicted weight and sex" width="1280" height="640" loading="lazy"></div>
+</article>
+<article class="card">
+  <a class="thumb-link" href="../projects/larvalens.html" tabindex="-1" aria-hidden="true"><div class="thumb"><img src="../assets/figures/larvalens/fig01_hero_light.webp" data-light="../assets/figures/larvalens/fig01_hero_light.webp" data-dark="../assets/figures/larvalens/fig01_hero_dark.webp" alt="One black soldier fly larva: photo, outline, skeleton with width map, and its predicted weight and sex" width="1280" height="640" loading="lazy"></div></a>
   <div class="card-body">
     <div><span class="badge done">Completed</span> <span class="badge">Open code · DOI</span></div>
-    <h3>LarvaLens</h3>
+    <h3><a href="../projects/larvalens.html">LarvaLens</a></h3>
     <p>Counting, measuring, weighing and sexing black soldier fly larvae from photos.</p>
     <div class="tags"><span class="tag">YOLOv8</span><span class="tag">ResNet-18</span><span class="tag">scikit-image</span></div>
-    <span class="more">Read more →</span>
+    <div class="card-actions"><button class="btn ghost peek-btn" type="button" data-peek="peek-larva">Quick look</button><a class="more" href="../projects/larvalens.html">Read more →</a></div>
   </div>
-</a>
-<a class="card" href="../projects/broiler-cricket-meal.html">
-  <div class="thumb"><img src="../assets/figures/broiler/figure_9_forecast_final_weight.webp" alt="Forecast error by age and the day-28 forecast for each broiler pen" width="1600" height="684" loading="lazy"></div>
+</article>
+<article class="card">
+  <a class="thumb-link" href="../projects/broiler-cricket-meal.html" tabindex="-1" aria-hidden="true"><div class="thumb"><img src="../assets/figures/broiler/figure_9_forecast_final_weight.webp" alt="Forecast error by age and the day-28 forecast for each broiler pen" width="1600" height="684" loading="lazy"></div></a>
   <div class="card-body">
     <div><span class="badge done">Completed</span> <span class="badge">Open code</span></div>
-    <h3>Broilers fed cricket meal</h3>
+    <h3><a href="../projects/broiler-cricket-meal.html">Broilers fed cricket meal</a></h3>
     <p>An open broiler trial, checked cell by cell, reanalysed pen by pen, and forecast ahead of slaughter day.</p>
     <div class="tags"><span class="tag">pandas</span><span class="tag">SciPy</span><span class="tag">scikit-learn</span></div>
-    <span class="more">Read more →</span>
+    <div class="card-actions"><button class="btn ghost peek-btn" type="button" data-peek="peek-broiler">Quick look</button><a class="more" href="../projects/broiler-cricket-meal.html">Read more →</a></div>
   </div>
-</a></div>
+</article></div>
+    
+<dialog class="peek" id="peek-cattle" aria-labelledby="peek-cattle-title">
+  <div class="peek-head"><h2 id="peek-cattle-title">Cattle live weight from photographs</h2><button class="icon-btn peek-close" type="button" aria-label="Close">×</button></div>
+  <div class="peek-tabs" role="tablist" aria-label="Quick look">
+    <button role="tab" aria-selected="true" aria-controls="peek-cattle-fig" id="peek-cattle-t1">Figures</button>
+    <button role="tab" aria-selected="false" aria-controls="peek-cattle-code" id="peek-cattle-t2" tabindex="-1">Code</button>
+  </div>
+  <div class="peek-panel" role="tabpanel" id="peek-cattle-fig" aria-labelledby="peek-cattle-t1"><div class="slides"><figure class="slide on" data-k="0"><div class="svg-slide"><svg viewBox="0 0 800 400" role="img" aria-label="Thesis pipeline: four side-view photos per cow, split by animal into five folds, then deep learning networks on the photos and classical models on outline measurements, scored per animal">
+<style>
+.pl-box{fill:var(--surface);stroke:var(--line);stroke-width:2}
+.pl-acc{fill:var(--accent-soft);stroke:var(--accent);stroke-width:2}
+.pl-t{font:600 15px system-ui,sans-serif;fill:var(--ink)}
+.pl-s{font:13px system-ui,sans-serif;fill:var(--muted)}
+.pl-a{stroke:var(--muted);stroke-width:2;fill:none;marker-end:url(#pl-arrow)}
+.pl-cow{fill:var(--ink);opacity:.82}
+</style>
+<rect width="800" height="400" fill="var(--surface-2)"/>
+<defs><marker id="pl-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="var(--muted)"/></marker></defs>
+<g transform="translate(24 120)">
+  <rect class="pl-box" width="170" height="160" rx="12"/>
+  <g transform="translate(18 22)">
+    <rect x="0" y="0" width="62" height="44" rx="5" class="pl-acc"/><rect x="72" y="0" width="62" height="44" rx="5" class="pl-acc"/>
+    <rect x="0" y="52" width="62" height="44" rx="5" class="pl-acc"/><rect x="72" y="52" width="62" height="44" rx="5" class="pl-acc"/>
+    <g class="pl-cow"><rect x="10" y="14" width="30" height="14" rx="6"/><rect x="38" y="9" width="12" height="10" rx="3"/><rect x="13" y="26" width="3.5" height="10" rx="1"/><rect x="19" y="26" width="3.5" height="10" rx="1"/><rect x="29" y="26" width="3.5" height="10" rx="1"/><rect x="35" y="26" width="3.5" height="10" rx="1"/><path d="M10 17q-5 2-4 9" stroke="currentColor" fill="none"/></g>
+    <g class="pl-cow" transform="translate(72 0)"><rect x="10" y="14" width="30" height="14" rx="6"/><rect x="38" y="9" width="12" height="10" rx="3"/><rect x="13" y="26" width="3.5" height="10" rx="1"/><rect x="19" y="26" width="3.5" height="10" rx="1"/><rect x="29" y="26" width="3.5" height="10" rx="1"/><rect x="35" y="26" width="3.5" height="10" rx="1"/><path d="M10 17q-5 2-4 9" stroke="currentColor" fill="none"/></g>
+    <g class="pl-cow" transform="translate(0 52)"><rect x="10" y="14" width="30" height="14" rx="6"/><rect x="38" y="9" width="12" height="10" rx="3"/><rect x="13" y="26" width="3.5" height="10" rx="1"/><rect x="19" y="26" width="3.5" height="10" rx="1"/><rect x="29" y="26" width="3.5" height="10" rx="1"/><rect x="35" y="26" width="3.5" height="10" rx="1"/><path d="M10 17q-5 2-4 9" stroke="currentColor" fill="none"/></g>
+    <g class="pl-cow" transform="translate(72 52)"><rect x="10" y="14" width="30" height="14" rx="6"/><rect x="38" y="9" width="12" height="10" rx="3"/><rect x="13" y="26" width="3.5" height="10" rx="1"/><rect x="19" y="26" width="3.5" height="10" rx="1"/><rect x="29" y="26" width="3.5" height="10" rx="1"/><rect x="35" y="26" width="3.5" height="10" rx="1"/><path d="M10 17q-5 2-4 9" stroke="currentColor" fill="none"/></g>
+  </g>
+  <text class="pl-t" x="85" y="140" text-anchor="middle">4 photos per cow</text>
+</g>
+<path class="pl-a" d="M198 200h40"/>
+<g transform="translate(244 140)">
+  <rect class="pl-box" width="150" height="120" rx="12"/>
+  <text class="pl-t" x="75" y="34" text-anchor="middle">Split by animal</text>
+  <text class="pl-s" x="75" y="56" text-anchor="middle">5 folds; all photos</text>
+  <text class="pl-s" x="75" y="74" text-anchor="middle">of a cow stay</text>
+  <text class="pl-s" x="75" y="92" text-anchor="middle">together</text>
+</g>
+<path class="pl-a" d="M398 182c30 0 30-74 62-74"/>
+<path class="pl-a" d="M398 218c30 0 30 74 62 74"/>
+<g transform="translate(464 48)">
+  <rect class="pl-acc" width="190" height="112" rx="12"/>
+  <text class="pl-t" x="95" y="32" text-anchor="middle">Deep learning</text>
+  <text class="pl-s" x="95" y="56" text-anchor="middle">9 pretrained networks</text>
+  <text class="pl-s" x="95" y="74" text-anchor="middle">(CNNs, vision transformers)</text>
+  <text class="pl-s" x="95" y="92" text-anchor="middle">read the photo directly</text>
+</g>
+<g transform="translate(464 240)">
+  <rect class="pl-box" width="190" height="112" rx="12"/>
+  <text class="pl-t" x="95" y="32" text-anchor="middle">Classical ML</text>
+  <text class="pl-s" x="95" y="56" text-anchor="middle">YOLO11 cuts out the cow,</text>
+  <text class="pl-s" x="95" y="74" text-anchor="middle">outline is measured, then</text>
+  <text class="pl-s" x="95" y="92" text-anchor="middle">4 regression models</text>
+</g>
+<path class="pl-a" d="M658 104c40 0 40 76 52 84"/>
+<path class="pl-a" d="M658 296c40 0 40-76 52-84"/>
+<g transform="translate(704 160)">
+  <rect class="pl-box" width="84" height="80" rx="12"/>
+  <text class="pl-t" x="42" y="36" text-anchor="middle">kg</text>
+  <text class="pl-s" x="42" y="58" text-anchor="middle">per animal</text>
+</g>
+</svg></div><figcaption>The method: four photos per cow, split by animal, deep learning on the photos and classical models on outline measurements. Results after the defence.</figcaption></figure></div></div>
+  <div class="peek-panel" role="tabpanel" id="peek-cattle-code" aria-labelledby="peek-cattle-t2" hidden><div class="code-tabs"><div role="tablist" aria-label="Code excerpts"><button role="tab" id="pk-cattle-t0" aria-controls="pk-cattle-p0" aria-selected="true" tabindex="0">folds_and_baseline.py</button></div><div class="code-panel" role="tabpanel" id="pk-cattle-p0" aria-labelledby="pk-cattle-t0"><p class="note">Folds are built on animals, not photos, and the no-photo baseline uses the same folds.</p><button class="copy" type="button">Copy</button><pre><code><span class="tok-k">from</span> sklearn.model_selection <span class="tok-k">import</span> StratifiedKFold
+<span class="tok-k">from</span> sklearn.linear_model <span class="tok-k">import</span> LinearRegression
+
+df[<span class="tok-s">&quot;weight_class&quot;</span>] = pd.<span class="tok-f">cut</span>(df[<span class="tok-s">&quot;weight_in_kg&quot;</span>], [<span class="tok-n">0</span>, <span class="tok-n">200</span>, <span class="tok-n">250</span>, <span class="tok-n">300</span>, <span class="tok-n">400</span>, <span class="tok-n">10000</span>], labels=<span class="tok-k">False</span>)
+df[<span class="tok-s">&quot;fold&quot;</span>] = -<span class="tok-n">1</span>
+splitter = <span class="tok-f">StratifiedKFold</span>(n_splits=<span class="tok-n">5</span>, shuffle=<span class="tok-k">True</span>, random_state=<span class="tok-n">42</span>)
+<span class="tok-k">for</span> k, (_, test_rows) <span class="tok-k">in</span> <span class="tok-f">enumerate</span>(splitter.<span class="tok-f">split</span>(df, df[<span class="tok-s">&quot;weight_class&quot;</span>])):
+    df.loc[test_rows, <span class="tok-s">&quot;fold&quot;</span>] = k
+
+
+X = pd.<span class="tok-f">get_dummies</span>(df[[<span class="tok-s">&quot;height_in_inch&quot;</span>, <span class="tok-s">&quot;breed&quot;</span>]], dtype=float)
+y = df[<span class="tok-s">&quot;weight_in_kg&quot;</span>]
+guess = pd.<span class="tok-f">Series</span>(<span class="tok-n">0.0</span>, index=df.index)
+<span class="tok-k">for</span> k <span class="tok-k">in</span> <span class="tok-f">range</span>(<span class="tok-n">5</span>):
+    test = df[<span class="tok-s">&quot;fold&quot;</span>] == k
+    guess[test] = <span class="tok-f">LinearRegression</span>().<span class="tok-f">fit</span>(X[~test], y[~test]).<span class="tok-f">predict</span>(X[test])</code></pre></div></div></div>
+  <div class="peek-foot"><a class="btn primary" href="../projects/cattle-weight.html">Read more</a></div>
+</dialog>
+<dialog class="peek" id="peek-larva" aria-labelledby="peek-larva-title">
+  <div class="peek-head"><h2 id="peek-larva-title">LarvaLens</h2><button class="icon-btn peek-close" type="button" aria-label="Close">×</button></div>
+  <div class="peek-tabs" role="tablist" aria-label="Quick look">
+    <button role="tab" aria-selected="true" aria-controls="peek-larva-fig" id="peek-larva-t1">Figures</button>
+    <button role="tab" aria-selected="false" aria-controls="peek-larva-code" id="peek-larva-t2" tabindex="-1">Code</button>
+  </div>
+  <div class="peek-panel" role="tabpanel" id="peek-larva-fig" aria-labelledby="peek-larva-t1"><div class="slides"><figure class="slide on" data-k="0"><img src="../assets/figures/larvalens/fig07_detection_overlay.webp" alt="YOLOv8 detections on test photos" width="1400" height="1047" loading="lazy"><figcaption>YOLOv8 finds and outlines larvae on photos it never saw, including some the labellers skipped.</figcaption></figure><figure class="slide" data-k="1"><img src="../assets/figures/larvalens/fig10_morphometrics.webp" alt="Outline, skeleton and width measurement of one larva" width="1400" height="457" loading="lazy"><figcaption>Each larva is measured from its outline: area, skeleton length and width.</figcaption></figure><figure class="slide" data-k="2"><img src="../assets/figures/larvalens/fig14_model_comparison.webp" alt="Weight models compared on unseen batches and a random split" width="1400" height="619" loading="lazy"><figcaption>Learning weight straight from pixels beats measuring shape, even on unseen rearing batches.</figcaption></figure></div><div class="slide-nav"><button class="icon-btn prev" type="button" aria-label="Previous figure">‹</button><div class="dots"><button class="dot on" type="button" aria-label="Figure 1" data-k="0"></button><button class="dot" type="button" aria-label="Figure 2" data-k="1"></button><button class="dot" type="button" aria-label="Figure 3" data-k="2"></button></div><button class="icon-btn next" type="button" aria-label="Next figure">›</button></div></div>
+  <div class="peek-panel" role="tabpanel" id="peek-larva-code" aria-labelledby="peek-larva-t2" hidden><div class="code-tabs"><div role="tablist" aria-label="Code excerpts"><button role="tab" id="pk-larva-t0" aria-controls="pk-larva-p0" aria-selected="true" tabindex="0">splits.py</button><button role="tab" id="pk-larva-t1" aria-controls="pk-larva-p1" aria-selected="false" tabindex="-1">morphometrics.py</button></div><div class="code-panel" role="tabpanel" id="pk-larva-p0" aria-labelledby="pk-larva-t0"><p class="note">Whole rearing batches go to one fold, so every test is on unseen batches.</p><button class="copy" type="button">Copy</button><pre><code><span class="tok-k">def</span> <span class="tok-f">assign_batch_folds</span>(batches: pd.DataFrame, n_folds: int = <span class="tok-n">5</span>, seed: int = <span class="tok-n">42</span>) -&gt; dict[str, int]:
+    <span class="tok-s">&quot;&quot;&quot;Assign whole batches to folds, spreading each temperature group across folds.&quot;&quot;&quot;</span>
+    rng = np.random.<span class="tok-f">default_rng</span>(seed)
+    order = batches.<span class="tok-f">assign</span>(tiebreak=rng.<span class="tok-f">random</span>(<span class="tok-f">len</span>(batches)))
+    group_size = order.<span class="tok-f">groupby</span>(<span class="tok-s">&quot;temp_group&quot;</span>)[<span class="tok-s">&quot;batch&quot;</span>].<span class="tok-f">transform</span>(<span class="tok-s">&quot;count&quot;</span>)
+    order = order.<span class="tok-f">assign</span>(group_size=group_size).<span class="tok-f">sort_values</span>(
+        [<span class="tok-s">&quot;group_size&quot;</span>, <span class="tok-s">&quot;temp_group&quot;</span>, <span class="tok-s">&quot;n&quot;</span>, <span class="tok-s">&quot;tiebreak&quot;</span>], ascending=[<span class="tok-k">False</span>, <span class="tok-k">True</span>, <span class="tok-k">False</span>, <span class="tok-k">True</span>]
+    )
+    rows = np.<span class="tok-f">zeros</span>(n_folds)
+    per_group: dict[str, np.ndarray] = {}
+    out: dict[str, int] = {}
+    <span class="tok-k">for</span> rec <span class="tok-k">in</span> order.<span class="tok-f">itertuples</span>(index=<span class="tok-k">False</span>):
+        counts = per_group.<span class="tok-f">setdefault</span>(rec.temp_group, np.<span class="tok-f">zeros</span>(n_folds))
+        noise = rng.<span class="tok-f">random</span>(n_folds) * <span class="tok-n">1e-6</span>
+        fold = <span class="tok-f">int</span>(np.<span class="tok-f">lexsort</span>((noise, rows, counts))[<span class="tok-n">0</span>])
+        out[rec.batch] = fold
+        counts[fold] += <span class="tok-n">1</span>
+        rows[fold] += rec.n
+    <span class="tok-k">return</span> out</code></pre></div><div class="code-panel" role="tabpanel" id="pk-larva-p1" aria-labelledby="pk-larva-t1" hidden><p class="note">Length from the skeleton's longest path, plus the tips that thinning cuts off.</p><button class="copy" type="button">Copy</button><pre><code>dt = ndimage.<span class="tok-f">distance_transform_edt</span>(mask)
+path = <span class="tok-f">longest_skeleton_path</span>(<span class="tok-f">skeletonize</span>(mask))
+ends = path[[<span class="tok-n">0</span>, -<span class="tok-n">1</span>]].<span class="tok-f">round</span>().<span class="tok-f">astype</span>(int)
+tips = <span class="tok-f">float</span>(dt[ends[<span class="tok-n">0</span>][<span class="tok-n">0</span>], ends[<span class="tok-n">0</span>][<span class="tok-n">1</span>]] + dt[ends[<span class="tok-n">1</span>][<span class="tok-n">0</span>], ends[<span class="tok-n">1</span>][<span class="tok-n">1</span>]])
+length = <span class="tok-f">path_length</span>(path) + tips
+idx = path.<span class="tok-f">round</span>().<span class="tok-f">astype</span>(int)
+radius = dt[idx[:, <span class="tok-n">0</span>], idx[:, <span class="tok-n">1</span>]]
+q = <span class="tok-f">len</span>(radius) // <span class="tok-n">4</span>
+middle = radius[q : <span class="tok-f">len</span>(radius) - q] <span class="tok-k">if</span> <span class="tok-f">len</span>(radius) &gt;= <span class="tok-n">4</span> <span class="tok-k">else</span> radius
+out = <span class="tok-f">Measurements</span>(
+    area_px=<span class="tok-f">float</span>(mask.<span class="tok-f">sum</span>()),
+    perimeter_px=<span class="tok-f">perimeter</span>(mask),
+    length_px=length,
+    width_max_px=<span class="tok-f">float</span>(<span class="tok-n">2</span> * dt.<span class="tok-f">max</span>()),
+    width_mid_px=<span class="tok-f">float</span>(<span class="tok-n">2</span> * middle.<span class="tok-f">mean</span>()),
+)</code></pre></div></div></div>
+  <div class="peek-foot"><a class="btn primary" href="https://github.com/raihan-patwary/larvalens">Code on GitHub</a><a class="btn ghost" href="../projects/larvalens.html">Read more</a></div>
+</dialog>
+<dialog class="peek" id="peek-broiler" aria-labelledby="peek-broiler-title">
+  <div class="peek-head"><h2 id="peek-broiler-title">Broilers fed cricket meal</h2><button class="icon-btn peek-close" type="button" aria-label="Close">×</button></div>
+  <div class="peek-tabs" role="tablist" aria-label="Quick look">
+    <button role="tab" aria-selected="true" aria-controls="peek-broiler-fig" id="peek-broiler-t1">Figures</button>
+    <button role="tab" aria-selected="false" aria-controls="peek-broiler-code" id="peek-broiler-t2" tabindex="-1">Code</button>
+  </div>
+  <div class="peek-panel" role="tabpanel" id="peek-broiler-fig" aria-labelledby="peek-broiler-t1"><div class="slides"><figure class="slide on" data-k="0"><img src="../assets/figures/broiler/figure_1_growth_curve.webp" alt="Growth curves of broilers by diet" width="1400" height="658" loading="lazy"><figcaption>All six diets grew along the same curve to about 2 kg at day 35.</figcaption></figure><figure class="slide" data-k="1"><img src="../assets/figures/broiler/figure_9_forecast_final_weight.webp" alt="Forecast error by age and the day-28 forecast per pen" width="1600" height="684" loading="lazy"><figcaption>From day 28, a pen's final weight can be forecast within about 26 g.</figcaption></figure></div><div class="slide-nav"><button class="icon-btn prev" type="button" aria-label="Previous figure">‹</button><div class="dots"><button class="dot on" type="button" aria-label="Figure 1" data-k="0"></button><button class="dot" type="button" aria-label="Figure 2" data-k="1"></button></div><button class="icon-btn next" type="button" aria-label="Next figure">›</button></div></div>
+  <div class="peek-panel" role="tabpanel" id="peek-broiler-code" aria-labelledby="peek-broiler-t2" hidden><div class="code-tabs"><div role="tablist" aria-label="Code excerpts"><button role="tab" id="pk-broiler-t0" aria-controls="pk-broiler-p0" aria-selected="true" tabindex="0">03_prediction_models.ipynb</button></div><div class="code-panel" role="tabpanel" id="pk-broiler-p0" aria-labelledby="pk-broiler-t0"><p class="note">Every forecast comes from a model fitted without the pen being forecast.</p><button class="copy" type="button">Copy</button><pre><code><span class="tok-k">def</span> <span class="tok-f">predict_unseen_pens</span>(model, features, target, pens):
+    <span class="tok-s">&quot;&quot;&quot;Predict every row with a model that was fitted without the pen the row belongs to.&quot;&quot;&quot;</span>
+    <span class="tok-k">return</span> <span class="tok-f">cross_val_predict</span>(model, features, target, groups=pens, cv=<span class="tok-f">LeaveOneGroupOut</span>())
+
+
+forecasts = {
+    <span class="tok-s">&quot;mean of the other pens (baseline)&quot;</span>: baseline_forecast,
+    <span class="tok-s">&quot;last week&#x27;s gain repeats&quot;</span>: (pen_weights[<span class="tok-n">28</span>] + (pen_weights[<span class="tok-n">28</span>] - pen_weights[<span class="tok-n">21</span>])).<span class="tok-f">to_numpy</span>(),
+    <span class="tok-s">&quot;straight line on the weight at day 28&quot;</span>:
+        <span class="tok-f">predict_unseen_pens</span>(<span class="tok-f">LinearRegression</span>(), pen_weights[[<span class="tok-n">28</span>]].<span class="tok-f">to_numpy</span>(), final_weight, pen_ids),
+    <span class="tok-s">&quot;random forest on the weights at days 7 to 28&quot;</span>:
+        <span class="tok-f">predict_unseen_pens</span>(<span class="tok-f">RandomForestRegressor</span>(n_estimators=<span class="tok-n">500</span>, random_state=<span class="tok-n">0</span>), weights_to_day28, final_weight, pen_ids),
+    <span class="tok-c"># ... plus a Gompertz growth curve per pen and nearest neighbours</span>
+}</code></pre></div></div></div>
+  <div class="peek-foot"><a class="btn primary" href="https://github.com/raihan-patwary/broiler-cricket-meal-analysis">Code on GitHub</a><a class="btn ghost" href="../projects/broiler-cricket-meal.html">Read more</a></div>
+</dialog>
     <h2 style="margin-top:48px">Lab, field and survey work</h2>
     <div class="mini-list"><div class="mini"><div><span class="badge">Manuscript in preparation</span></div><h3>Yellow mealworm larval weight from proximate composition</h3><p>Research Assistant, NST Fellowship, Dec 2024 – Feb 2026. Larval rearing, wet-lab analyses, and PLS, Elastic Net and SVR models tested on held-out rearing containers.</p></div><div class="mini"><div><span class="badge ongoing">Ongoing</span></div><h3>Farm-level production forecasting in Bangladesh</h3><p>Self-initiated, since Jun 2026. A search for usable secondary datasets from Bangladesh; it found the Cow Images Dataset my thesis now uses.</p></div><div class="mini"><div><span class="badge">Field survey</span></div><h3>RationSmart: precision tools for feed analysis and ration optimization</h3><p>Questionnaire Surveyor, Jun – Jul 2026, University of California, Davis; funded by the Global Methane Hub. Five dairy hub regions of Bangladesh.</p></div><div class="mini"><div><span class="badge done">Completed</span></div><h3>Omega-3 enrichment of black soldier fly larvae</h3><p>Research Assistant, Jan – Apr 2026. Dietary flaxseed oil to raise larval omega-3, and waste degradation efficiency.</p></div><div class="mini"><div><span class="badge done">Completed</span></div><h3>Omega-3 enriched broiler production</h3><p>Research Assistant, Apr – Oct 2025, World Bank-funded. Feeding trials, data collection, proximate and statistical analysis.</p></div></div>
   </div>

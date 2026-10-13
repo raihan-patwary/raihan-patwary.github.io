@@ -75,6 +75,59 @@
     items.forEach(el => io.observe(el));
   }
 
+  /* ---------- tabs (Quick look panels and code files) ---------- */
+  $$('[role="tablist"]').forEach(list => {
+    const tabs = $$('[role="tab"]', list);
+    const select = t => tabs.forEach(x => {
+      const on = x === t; x.setAttribute("aria-selected", String(on)); x.tabIndex = on ? 0 : -1;
+      const panel = document.getElementById(x.getAttribute("aria-controls")); if (panel) panel.hidden = !on;
+    });
+    tabs.forEach((t, n) => {
+      t.addEventListener("click", () => select(t));
+      t.addEventListener("keydown", e => {
+        const k = e.key === "ArrowRight" ? 1 : e.key === "ArrowLeft" ? -1 : 0;
+        if (k) { const nx = tabs[(n + k + tabs.length) % tabs.length]; nx.focus(); select(nx); }
+      });
+    });
+  });
+  $$(".copy").forEach(btn => btn.addEventListener("click", async () => {
+    try { await navigator.clipboard.writeText(btn.parentElement.querySelector("pre").innerText); btn.textContent = "Copied"; }
+    catch (e) { btn.textContent = "Select and copy"; }
+    setTimeout(() => { btn.textContent = "Copy"; }, 1500);
+  }));
+
+  /* ---------- Quick look panels ---------- */
+  $$(".peek-btn").forEach(btn => {
+    const dlg = document.getElementById(btn.dataset.peek);
+    if (!dlg || typeof dlg.showModal !== "function") { btn.hidden = true; return; }
+    btn.addEventListener("click", () => dlg.showModal());
+  });
+  $$("dialog.peek").forEach(dlg => {
+    const close = () => {
+      if (calm) return dlg.close();
+      dlg.classList.add("closing");
+      setTimeout(() => { dlg.classList.remove("closing"); dlg.close(); }, 190);
+    };
+    $(".peek-close", dlg).addEventListener("click", close);
+    dlg.addEventListener("click", e => { if (e.target === dlg) close(); });        // click on the dark backdrop
+    const slides = $$(".slide", dlg), dots = $$(".dot", dlg);
+    let i = 0;
+    const show = n => {
+      i = (n + slides.length) % slides.length;
+      slides.forEach((s, k) => s.classList.toggle("on", k === i));
+      dots.forEach((d, k) => d.classList.toggle("on", k === i));
+    };
+    const prev = $(".prev", dlg), next = $(".next", dlg);
+    if (prev) prev.addEventListener("click", () => show(i - 1));
+    if (next) next.addEventListener("click", () => show(i + 1));
+    dots.forEach(d => d.addEventListener("click", () => show(+d.dataset.k)));
+    dlg.addEventListener("keydown", e => {
+      if (e.target.closest('[role="tablist"]')) return;
+      if (e.key === "ArrowRight" && slides.length > 1) show(i + 1);
+      if (e.key === "ArrowLeft" && slides.length > 1) show(i - 1);
+    });
+  });
+
   /* ---------- figure viewer ---------- */
   const figs = $$("figure.fig img");
   if (figs.length) {
