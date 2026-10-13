@@ -61,7 +61,7 @@
 
   // fade up on scroll, one after another within each group
   const groups = [".card", ".mini", ".flow li", ".zones > div", ".outputs li", ".entry", ".fact", "figure",
-                  ".doodle", "section:not(.hero) h2", "section:not(.hero) .lead", ".photo-card"];
+                  ".doodle", ".toolflow li", ".ai-note", "section:not(.hero) h2", "section:not(.hero) .lead", ".photo-card"];
   const items = $$(groups.join(",")).filter(el => !el.closest(".hero"));
   if ("IntersectionObserver" in window && !calm) {
     items.forEach(el => {

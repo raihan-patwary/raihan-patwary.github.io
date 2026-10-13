@@ -332,3 +332,17 @@ dialog.peek.closing { animation: peek-out .2s ease forwards; }
 @media (prefers-reduced-motion: reduce) { .js .kbadges .kbadge { opacity: 1; } .js .kbadges.in .kbadge { animation: none; } }
 @media (max-width: 480px) { .kbadge { width: 52px; } .kbadges { gap: 10px; } }
 .slide img { max-height: 60vh; width: 100%; object-fit: contain; }
+
+/* ---------- toolkit (About) ---------- */
+.toolflow { list-style: none; padding: 0; margin: 22px 0 0; display: grid; gap: 10px; grid-template-columns: 1fr; counter-reset: t; }
+@media (min-width: 720px) { .toolflow { grid-template-columns: repeat(3, 1fr); } }
+@media (min-width: 1000px) { .toolflow { grid-template-columns: repeat(6, 1fr); } }
+.toolflow li { position: relative; background: var(--accent-soft); border-radius: 10px; padding: 12px 14px 12px 44px; }
+.toolflow li::before { counter-increment: t; content: counter(t); position: absolute; left: 12px; top: 12px; width: 22px; height: 22px; border-radius: 50%; background: var(--accent); color: var(--accent-ink); font: 700 .78rem/22px var(--sans); text-align: center; }
+.toolflow b { display: block; font-size: .95rem; }
+.toolflow span { display: block; font-size: .84rem; color: var(--muted); margin-top: 2px; }
+.tool-card h3 { font-size: 1.05rem; margin: 0 0 10px; }
+.chips-row { display: flex; flex-wrap: wrap; gap: 6px; }
+.chips-row .chip { font-size: .84rem; padding: 4px 10px; border-radius: 999px; background: var(--surface-2); border: 1px solid var(--line); color: var(--ink); transition: background .2s, border-color .2s, transform .2s; }
+.chips-row .chip:hover { background: var(--accent-soft); border-color: var(--accent); transform: translateY(-2px); }
+.ai-note { margin-top: 22px; }
