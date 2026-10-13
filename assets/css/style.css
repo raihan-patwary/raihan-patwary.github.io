@@ -280,3 +280,15 @@ section[id] { scroll-margin-top: 72px; }
 @media (min-width: 720px) { .outputs li { grid-template-columns: 112px 1fr; gap: 16px; align-items: baseline; } }
 .otype { font: 600 .72rem/1 var(--sans); letter-spacing: .08em; text-transform: uppercase; color: var(--accent); }
 pre.wrap-text { white-space: pre-wrap; word-break: break-word; }
+
+/* always-visible CV download in the header */
+.cv-btn { padding: 7px 14px; font-size: .88rem; white-space: nowrap; }
+@media (max-width: 380px) { .cv-btn { padding: 7px 10px; font-size: .82rem; } }
+.icon-btn { flex: none; }
+.cv-short { display: none; }
+@media (max-width: 480px) {
+  .nav { gap: 8px; }
+  .brand { font-size: 1rem; }
+  .cv-long { display: none; }
+  .cv-short { display: inline; }
+}
