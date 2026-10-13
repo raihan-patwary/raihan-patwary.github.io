@@ -4,12 +4,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Broilers fed cricket meal | Md Raihan Patwary</title>
-<meta name="description" content="An audit and reanalysis of an open 35-day broiler trial with cricket meal: data checks, pen-level statistics and forecasts tested on unseen pens.">
+<meta name="description" content="An audit and reanalysis of an open 35-day broiler trial with cricket meal.">
 <meta name="author" content="Md Raihan Patwary">
 <link rel="canonical" href="https://raihan-patwary.github.io/projects/broiler-cricket-meal.html">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Broilers fed cricket meal | Md Raihan Patwary">
-<meta property="og:description" content="An audit and reanalysis of an open 35-day broiler trial with cricket meal: data checks, pen-level statistics and forecasts tested on unseen pens.">
+<meta property="og:description" content="An audit and reanalysis of an open 35-day broiler trial with cricket meal.">
 <meta property="og:url" content="https://raihan-patwary.github.io/projects/broiler-cricket-meal.html">
 <meta property="og:image" content="https://raihan-patwary.github.io/assets/img/og-image.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -27,10 +27,10 @@
 <a class="skip" href="#main">Skip to content</a>
 <header class="site-header">
   <nav class="wrap nav" aria-label="Main">
-    <a class="brand" href="../index.html">Md Raihan <span>Patwary</span></a>
-    <ul class="nav-links" id="nav-links"><li><a href="../index.html">Home</a></li><li><a href="../projects/index.html" aria-current="page">Projects</a></li><li><a href="../about.html">About</a></li><li><a href="../cv.html">CV</a></li><li><a href="../contact.html">Contact</a></li></ul>
+    <a class="brand" href="../index.html">Md Raihan Patwary</a>
+    <ul class="nav-links" id="nav-links"><li><a href="../index.html">Home</a></li><li><a href="../about.html">About</a></li><li><a href="../projects/index.html" aria-current="page">Projects</a></li><li><a href="../contact.html">Contact</a></li></ul>
     <a class="btn primary cv-btn" href="../assets/files/Md_Raihan_Patwary_CV.pdf" download="Md_Raihan_Patwary_CV.pdf" aria-label="Download CV (PDF)"><span class="cv-long">Download CV</span><span class="cv-short">CV ↓</span></a>
-    <button class="icon-btn theme-btn" type="button" aria-label="Switch theme">☾</button>
+    <button class="theme-toggle" type="button" aria-pressed="false" aria-label="Switch between light and dark mode" title="Light / dark mode"><span class="ico" aria-hidden="true">☀</span><span class="ico" aria-hidden="true">☾</span><span class="knob" aria-hidden="true"></span></button>
     <button class="icon-btn menu-btn" type="button" aria-label="Menu" aria-controls="nav-links" aria-expanded="false">☰</button>
   </nav>
 </header>
@@ -40,94 +40,30 @@
   <div class="wrap">
     <p class="crumbs"><a href="../projects/index.html">Projects</a> / Broilers and cricket meal</p>
     <span class="badge done">Completed</span> <span class="badge">Open code</span>
-    <h1 style="margin-top:12px">Broiler growth and feed efficiency with dietary cricket meal</h1>
-    <p class="lead">An open 35-day trial with cricket meal at 0 to 20% of the diet. Most of the work went into turning a spreadsheet made for people into data that can be analysed, and checking it along the way.</p>
+    <h1 style="margin-top:12px">Broilers fed cricket meal</h1>
+    <p class="lead">Broiler growth and feed efficiency with dietary cricket meal: an open trial dataset, checked and reanalysed.</p>
     <div class="btns"><a class="btn primary" href="https://github.com/raihan-patwary/broiler-cricket-meal-analysis">Code and notebooks on GitHub</a></div>
-    <div class="facts">
-      <div class="fact"><b>Data</b>Ross 308 broilers, 24 pens, 6 diets (4 pens each), Mendeley Data</div>
-      <div class="fact"><b>Question</b>How did cricket meal affect growth and feed efficiency?</div>
-      <div class="fact"><b>Unit of analysis</b>The pen, 4 per diet</div>
-      <div class="fact"><b>Tools</b>pandas, SciPy, scikit-learn, matplotlib</div>
-    </div>
-    <nav class="toc" aria-label="On this page"><span>On this page</span><a href="#work">What I did</a><a href="#figures">Figures</a><a href="#code">Code</a></nav>
+    <div class="facts"><div class="fact"><b>Data</b>35-day trial, 6 diets, 24 pens (Mendeley Data)</div><div class="fact"><b>Unit of analysis</b>The pen</div><div class="fact"><b>Tools</b>pandas, SciPy, scikit-learn</div></div>
   </div>
 </section>
-
-<section id="work">
-  <div class="wrap grid two">
-    <div class="prose">
-      <h2>What I did</h2>
-      <ul>
-        <li>Inspected each sheet before changing anything. Cleaning was limited to what the inspection showed to be wrong. No rows were deleted.</li>
-        <li>Recomputed every calculation the workbook supplied (gain, feed conversion ratio, organ indices, yields) and compared them.</li>
-        <li>Compared diets on pen values, because the pen is the experimental unit: one-way ANOVA with Holm-adjusted comparisons against the control.</li>
-        <li>Tested simple forecasting models on pens they had not seen (leave one pen out).</li>
-      </ul>
-    </div>
-    <div class="prose">
-      <h2>What I found</h2>
-      <ul>
-        <li><b>Data checks:</b> the gain column disagrees with the weight column in 14 of 120 pen-weeks, and 21 supplied organ indices do not match the listed weights. The notebooks show each case.</li>
-        <li><b>Growth:</b> final weight differed among diets (P = 0.021). Only the 5% cricket meal pens differed from the control, 7.7% lighter.</li>
-        <li><b>Feed efficiency:</b> neither feed intake (P = 0.13) nor FCR (P = 0.59) differed clearly.</li>
-        <li><b>Forecast:</b> a straight line on day-28 weight forecast the final weight of an unseen pen within 26 g (1.3%). A random forest did worse than the straight line.</li>
-        <li><b>Caveat:</b> with four pens per diet, only large differences can be detected.</li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<section id="figures">
+<section>
   <div class="wrap">
-    <h2>Figures</h2>
-    <p class="muted">Click any figure to enlarge it.</p>
-    <figure class="fig"><img src="../assets/figures/broiler/figure_1_growth_curve.webp" alt="Growth curves of broilers by diet" width="1600" height="752" loading="lazy"><figcaption>All diets grew along the same curve to about 2 kg at day 35.</figcaption></figure>
-    <div class="gallery two">
-      <figure class="fig"><img src="../assets/figures/broiler/figure_3_final_body_weight.webp" alt="Final body weight of each pen by diet" width="1600" height="932" loading="lazy"><figcaption>Final body weight of each pen. The 5% cricket meal pens were the only ones that differed from the control.</figcaption></figure>
-      <figure class="fig"><img src="../assets/figures/broiler/figure_9_forecast_final_weight.webp" alt="Forecast error by age and the day-28 forecast pen by pen" width="1600" height="684" loading="lazy"><figcaption>Forecasts made from one earlier weight. From day 28 the error drops to 26 g, against 62 g for a plain average of the other pens.</figcaption></figure>
-    </div>
-    <p class="small muted">Data: open broiler trial dataset on Mendeley Data, <a href="https://doi.org/10.17632/rj5fybnzh6.1">doi:10.17632/rj5fybnzh6.1</a>. Figures are my own analysis.</p>
+    <figure class="fig"><img src="../assets/figures/broiler/figure_9_forecast_final_weight.webp" alt="Forecast error by age and the day-28 forecast for each pen" width="1600" height="684" loading="lazy"><figcaption>From day 28, a pen's final weight can be forecast within about 26 g.</figcaption></figure>
+    <h2 style="margin-top:28px">In short</h2>
+    <ul class="prose"><li><b>Checked first.</b> Recomputed every value in the workbook and found gains that contradict the weights in 14 of 120 pen-weeks.</li><li><b>Analysed fairly.</b> Diets compared with the pen, not the bird, as the experimental unit.</li><li><b>Forecast ahead.</b> A simple model on day-28 weight forecast the final weight of unseen pens within 1.3%.</li></ul>
+    <p class="small muted">Data: <a href="https://doi.org/10.17632/rj5fybnzh6.1">doi:10.17632/rj5fybnzh6.1</a>. Analysis and figures are my own.</p>
   </div>
 </section>
-
-<section id="code">
-  <div class="wrap">
-    <h2>A look at the code</h2>
-    <div class="code-tabs"><div role="tablist" aria-label="Code excerpts"><button role="tab" id="broiler-t0" aria-controls="broiler-p0" aria-selected="true" tabindex="0">forecast: unseen pens</button><button role="tab" id="broiler-t1" aria-controls="broiler-p1" aria-selected="false" tabindex="-1">forecast: growth curve</button></div><div class="code-panel" role="tabpanel" id="broiler-p0" aria-labelledby="broiler-t0"><p class="note">Every forecast comes from a model fitted without the pen being forecast.</p><button class="copy" type="button">Copy</button><pre><code><span class="tok-k">def</span> <span class="tok-f">predict_unseen_pens</span>(model, features, target, pens):
-    <span class="tok-s">&quot;&quot;&quot;Predict every row with a model that was fitted without the pen the row belongs to.&quot;&quot;&quot;</span>
-    <span class="tok-k">return</span> <span class="tok-f">cross_val_predict</span>(model, features, target, groups=pens, cv=<span class="tok-f">LeaveOneGroupOut</span>())
-
-
-forecasts = {
-    <span class="tok-s">&quot;mean of the other pens (baseline)&quot;</span>: baseline_forecast,
-    <span class="tok-s">&quot;last week&#x27;s gain repeats&quot;</span>: (pen_weights[<span class="tok-n">28</span>] + (pen_weights[<span class="tok-n">28</span>] - pen_weights[<span class="tok-n">21</span>])).<span class="tok-f">to_numpy</span>(),
-    <span class="tok-s">&quot;straight line on the weight at day 28&quot;</span>:
-        <span class="tok-f">predict_unseen_pens</span>(<span class="tok-f">LinearRegression</span>(), pen_weights[[<span class="tok-n">28</span>]].<span class="tok-f">to_numpy</span>(), final_weight, pen_ids),
-    <span class="tok-s">&quot;random forest on the weights at days 7 to 28&quot;</span>:
-        <span class="tok-f">predict_unseen_pens</span>(<span class="tok-f">RandomForestRegressor</span>(n_estimators=<span class="tok-n">500</span>, random_state=<span class="tok-n">0</span>), weights_to_day28, final_weight, pen_ids),
-    <span class="tok-c"># ... plus a Gompertz growth curve per pen and nearest neighbours</span>
-}</code></pre></div><div class="code-panel" role="tabpanel" id="broiler-p1" aria-labelledby="broiler-t1" hidden><p class="note">A Gompertz curve fitted to each pen's weights up to day 28, one of the competing forecasts.</p><button class="copy" type="button">Copy</button><pre><code><span class="tok-k">def</span> <span class="tok-f">gompertz</span>(age, mature_weight, b, k):
-    <span class="tok-s">&quot;&quot;&quot;Gompertz growth curve: weight at a given age.&quot;&quot;&quot;</span>
-    <span class="tok-k">return</span> mature_weight * np.<span class="tok-f">exp</span>(-b * np.<span class="tok-f">exp</span>(-k * age))
-
-
-<span class="tok-k">def</span> <span class="tok-f">gompertz_forecast</span>(weights, days=(<span class="tok-n">0</span>, <span class="tok-n">7</span>, <span class="tok-n">14</span>, <span class="tok-n">21</span>, <span class="tok-n">28</span>), target_day=<span class="tok-n">35</span>):
-    <span class="tok-s">&quot;&quot;&quot;Fit a Gompertz curve to the weights of one pen and read off the weight at the target day.&quot;&quot;&quot;</span>
-    parameters, _ = <span class="tok-f">curve_fit</span>(gompertz, days, weights, p0=[<span class="tok-n">5000</span>, <span class="tok-n">4.8</span>, <span class="tok-n">0.04</span>], maxfev=<span class="tok-n">20000</span>)
-    <span class="tok-k">return</span> <span class="tok-f">gompertz</span>(target_day, *parameters)</code></pre></div></div>
-  </div>
-</section>
-
 </main>
 <footer class="site-footer">
   <div class="wrap foot">
     <div class="foot-logos">
-      <img src="../assets/img/bau-logo.png" alt="Bangladesh Agricultural University logo" width="40" height="40" loading="lazy">
-      <img src="../assets/img/faculty-logo.jpg" alt="Faculty of Animal Husbandry logo" width="40" height="40" loading="lazy">
-      <span>Md Raihan Patwary · Department of Animal Nutrition, Bangladesh Agricultural University, Mymensingh</span>
+      <img src="../assets/img/bau-logo-clear.png" alt="Bangladesh Agricultural University logo" width="77" height="62" loading="lazy">
+      <img src="../assets/img/faculty-logo-clear.png" alt="Faculty of Animal Husbandry logo" width="65" height="62" loading="lazy">
+      <span>Md Raihan Patwary<br>Department of Animal Nutrition, Faculty of Animal Husbandry<br>Bangladesh Agricultural University, Mymensingh</span>
     </div>
     <div class="foot-links">
-      <a href="mailto:raihan.1903065@bau.edu.bd">Email</a><a href="https://github.com/raihan-patwary">GitHub</a><a href="https://www.kaggle.com/mdraihanpatwary02">Kaggle</a><a href="https://www.linkedin.com/in/md-raihan-patwary-bau-animal-nutrition">LinkedIn</a>
+      <a href="mailto:raihan.1903065@bau.edu.bd">Email</a><a href="https://github.com/raihan-patwary">GitHub</a><a href="https://www.kaggle.com/mdraihanpatwary02">Kaggle</a><a href="https://www.linkedin.com/in/md-raihan-patwary-bau-animal-nutrition">LinkedIn</a><a href="../play.html">Play Lab Rescue</a>
     </div>
     <p class="small" style="margin:0;width:100%">Last updated October 2026 · Plain HTML and CSS, hosted on GitHub Pages.</p>
   </div>

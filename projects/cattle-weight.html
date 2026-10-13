@@ -4,12 +4,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Cattle live weight from photographs | Md Raihan Patwary</title>
-<meta name="description" content="MSc thesis: comparing deep learning and classical machine learning models for estimating cattle live weight from photographs, tested only on animals the models have never seen.">
+<meta name="description" content="MSc thesis: comparing deep learning and classical machine learning models for estimating cattle live weight from photographs.">
 <meta name="author" content="Md Raihan Patwary">
 <link rel="canonical" href="https://raihan-patwary.github.io/projects/cattle-weight.html">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Cattle live weight from photographs | Md Raihan Patwary">
-<meta property="og:description" content="MSc thesis: comparing deep learning and classical machine learning models for estimating cattle live weight from photographs, tested only on animals the models have never seen.">
+<meta property="og:description" content="MSc thesis: comparing deep learning and classical machine learning models for estimating cattle live weight from photographs.">
 <meta property="og:url" content="https://raihan-patwary.github.io/projects/cattle-weight.html">
 <meta property="og:image" content="https://raihan-patwary.github.io/assets/img/og-image.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -27,10 +27,10 @@
 <a class="skip" href="#main">Skip to content</a>
 <header class="site-header">
   <nav class="wrap nav" aria-label="Main">
-    <a class="brand" href="../index.html">Md Raihan <span>Patwary</span></a>
-    <ul class="nav-links" id="nav-links"><li><a href="../index.html">Home</a></li><li><a href="../projects/index.html" aria-current="page">Projects</a></li><li><a href="../about.html">About</a></li><li><a href="../cv.html">CV</a></li><li><a href="../contact.html">Contact</a></li></ul>
+    <a class="brand" href="../index.html">Md Raihan Patwary</a>
+    <ul class="nav-links" id="nav-links"><li><a href="../index.html">Home</a></li><li><a href="../about.html">About</a></li><li><a href="../projects/index.html" aria-current="page">Projects</a></li><li><a href="../contact.html">Contact</a></li></ul>
     <a class="btn primary cv-btn" href="../assets/files/Md_Raihan_Patwary_CV.pdf" download="Md_Raihan_Patwary_CV.pdf" aria-label="Download CV (PDF)"><span class="cv-long">Download CV</span><span class="cv-short">CV ↓</span></a>
-    <button class="icon-btn theme-btn" type="button" aria-label="Switch theme">☾</button>
+    <button class="theme-toggle" type="button" aria-pressed="false" aria-label="Switch between light and dark mode" title="Light / dark mode"><span class="ico" aria-hidden="true">☀</span><span class="ico" aria-hidden="true">☾</span><span class="knob" aria-hidden="true"></span></button>
     <button class="icon-btn menu-btn" type="button" aria-label="Menu" aria-controls="nav-links" aria-expanded="false">☰</button>
   </nav>
 </header>
@@ -40,42 +40,15 @@
   <div class="wrap">
     <p class="crumbs"><a href="../projects/index.html">Projects</a> / Cattle live weight</p>
     <span class="badge ongoing">Ongoing</span> <span class="badge">MSc thesis</span>
-    <h1 style="margin-top:12px">Image-based live weight estimation of cattle in Bangladesh</h1>
-    <p class="lead">A comparison of deep learning and machine learning models. The thesis is being written now, so this page shows the question and the method. Results will be added after the thesis defence.</p>
-    <div class="facts">
-      <div class="fact"><b>Status</b>Ongoing, expected November 2026</div>
-      <div class="fact"><b>Data</b>Public Cow Images Dataset (CID): 513 cattle, 4 side-view photos each</div>
-      <div class="fact"><b>Tools</b>PyTorch, timm, Ultralytics YOLO11, scikit-learn, Kaggle GPUs</div>
-      <div class="fact"><b>Supervision</b>Department of Animal Nutrition, BAU</div>
-    </div>
-    <nav class="toc" aria-label="On this page"><span>On this page</span><a href="#question">Question</a><a href="#method">Method</a><a href="#code">Code</a></nav>
+    <h1 style="margin-top:12px">Cattle live weight from photographs</h1>
+    <p class="lead">Image-based live weight estimation of cattle in Bangladesh: a comparison of deep learning and machine learning models.</p>
+    <div class="btns"></div>
+    <div class="facts"><div class="fact"><b>Status</b>Ongoing, expected November 2026</div><div class="fact"><b>Data</b>Public Cow Images Dataset: 513 cattle, 4 photos each</div><div class="fact"><b>Tools</b>PyTorch, timm, YOLO11, scikit-learn</div><div class="fact"><b>Department</b>Animal Nutrition, BAU</div></div>
   </div>
 </section>
-
-<section id="question">
-  <div class="wrap prose">
-    <h2>The question</h2>
-    <p>Live weight guides feeding, treatment and sale, but on most farms and markets in Bangladesh it is judged by eye, because scales are costly and hard to move. I ask whether ordinary photographs could stand in for the scale, and which kind of model reads them best.</p>
-    <h2>Why the test design matters</h2>
-    <p>Each cow in the CID has four photos. If photos are split into training and test sets at random, the same cow can sit on both sides, and the model is tested on animals it has already seen. Earlier work on this dataset did not say how photos were split, and the dataset authors' public code splits single images at random. In my thesis every model is tested only on animals it has never seen.</p>
-  </div>
-  <div class="wrap" style="margin-top:12px">
-<div class="demo" id="split-demo">
-  <div class="demo-controls">
-    <button class="btn ghost" type="button" data-split="random">Random photo split</button>
-    <button class="btn primary" type="button" data-split="animal">Split by animal</button>
-  </div>
-  <div class="herd" aria-live="polite"></div>
-  <div class="legend"><span><i style="background:var(--surface-2);border:1px solid var(--line)"></i>training photo</span><span><i style="background:var(--accent)"></i>test photo</span><span><i style="background:var(--warn)"></i>cow seen in both</span></div>
-  <div class="demo-out" aria-live="polite"></div>
-  <noscript><p class="small muted">This demo needs JavaScript. In short: if photos are split at random, the same cow ends up in training and testing, and the score looks better than it really is.</p></noscript>
-</div></div>
-</section>
-
-<section id="method">
+<section>
   <div class="wrap">
-    <h2>Method</h2>
-    <div style="border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;margin:18px 0 26px"><svg viewBox="0 0 800 400" role="img" aria-label="Thesis pipeline: four side-view photos per cow, split by animal into five folds, then deep learning networks on the photos and classical models on outline measurements, scored per animal">
+    <div style="border:1px solid var(--line);border-radius:var(--radius);overflow:hidden"><svg viewBox="0 0 800 400" role="img" aria-label="Thesis pipeline: four side-view photos per cow, split by animal into five folds, then deep learning networks on the photos and classical models on outline measurements, scored per animal">
 <style>
 .pl-box{fill:var(--surface);stroke:var(--line);stroke-width:2}
 .pl-acc{fill:var(--accent-soft);stroke:var(--accent);stroke-width:2}
@@ -130,72 +103,21 @@
   <text class="pl-s" x="42" y="58" text-anchor="middle">per animal</text>
 </g>
 </svg></div>
-    <div class="grid two">
-      <div class="prose">
-        <h3>Three kinds of model, one fair test</h3>
-        <ul>
-          <li><b>Baseline:</b> linear regression on height and breed, no photo at all. Every other model has to beat it.</li>
-          <li><b>Classical machine learning:</b> YOLO11 cuts the cow out of each photo, its outline is measured, and linear regression, SVR, random forest and gradient boosting predict weight from those measurements.</li>
-          <li><b>Deep learning:</b> nine ImageNet-pretrained networks read the photo directly. Seven are CNNs (ConvNeXt-Tiny, DenseNet121, EfficientNet-B0 and B3, MobileNetV3, RegNetY, ResNet50) and two are vision transformers (Swin-Tiny, DeiT-Small). I also rebuilt the small CNN from an earlier study on the same data.</li>
-        </ul>
-      </div>
-      <div class="prose">
-        <h3>How models are scored</h3>
-        <ul>
-          <li>Five folds, built from animals, stratified by weight class.</li>
-          <li>All four photos of a cow stay in the same fold.</li>
-          <li>Each animal's four photo estimates are averaged, then compared with its real weight.</li>
-          <li>Error is reported in kg and in percent, by weight class and by breed, with bootstrap intervals and paired tests between models.</li>
-        </ul>
-      </div>
-    </div>
+    <h2 style="margin-top:28px">In short</h2>
+    <ul class="prose"><li><b>The question.</b> Most cattle in Bangladesh are weighed by eye, because scales are costly and hard to move. Can ordinary side-view photos take the scale's place?</li><li><b>The approach.</b> Pretrained deep learning networks (CNNs and vision transformers) read the photos directly; classical models use body-outline measurements cut out with YOLO11. All are compared with a no-photo baseline.</li><li><b>The test.</b> Every model is scored only on animals it has never seen, with all four photos of an animal kept together.</li></ul>
+    <div class="callout">Results will be shared here after the thesis defence.</div>
   </div>
 </section>
-
-<section id="code">
-  <div class="wrap">
-    <h2>A look at the code</h2>
-    <p class="muted">Excerpts from my Kaggle training notebook, copied as they are. The full code will be published with the thesis.</p>
-    <div class="code-tabs"><div role="tablist" aria-label="Code excerpts"><button role="tab" id="cattle-t0" aria-controls="cattle-p0" aria-selected="true" tabindex="0">folds_and_baseline.py</button><button role="tab" id="cattle-t1" aria-controls="cattle-p1" aria-selected="false" tabindex="-1">model_config.py</button></div><div class="code-panel" role="tabpanel" id="cattle-p0" aria-labelledby="cattle-t0"><p class="note">Folds are built on animals, not photos, and the no-photo baseline is fitted on exactly the same folds.</p><button class="copy" type="button">Copy</button><pre><code><span class="tok-k">from</span> sklearn.model_selection <span class="tok-k">import</span> StratifiedKFold
-<span class="tok-k">from</span> sklearn.linear_model <span class="tok-k">import</span> LinearRegression
-
-df[<span class="tok-s">&quot;weight_class&quot;</span>] = pd.<span class="tok-f">cut</span>(df[<span class="tok-s">&quot;weight_in_kg&quot;</span>], [<span class="tok-n">0</span>, <span class="tok-n">200</span>, <span class="tok-n">250</span>, <span class="tok-n">300</span>, <span class="tok-n">400</span>, <span class="tok-n">10000</span>], labels=<span class="tok-k">False</span>)
-df[<span class="tok-s">&quot;fold&quot;</span>] = -<span class="tok-n">1</span>
-splitter = <span class="tok-f">StratifiedKFold</span>(n_splits=<span class="tok-n">5</span>, shuffle=<span class="tok-k">True</span>, random_state=<span class="tok-n">42</span>)
-<span class="tok-k">for</span> k, (_, test_rows) <span class="tok-k">in</span> <span class="tok-f">enumerate</span>(splitter.<span class="tok-f">split</span>(df, df[<span class="tok-s">&quot;weight_class&quot;</span>])):
-    df.loc[test_rows, <span class="tok-s">&quot;fold&quot;</span>] = k
-
-
-X = pd.<span class="tok-f">get_dummies</span>(df[[<span class="tok-s">&quot;height_in_inch&quot;</span>, <span class="tok-s">&quot;breed&quot;</span>]], dtype=float)
-y = df[<span class="tok-s">&quot;weight_in_kg&quot;</span>]
-guess = pd.<span class="tok-f">Series</span>(<span class="tok-n">0.0</span>, index=df.index)
-<span class="tok-k">for</span> k <span class="tok-k">in</span> <span class="tok-f">range</span>(<span class="tok-n">5</span>):
-    test = df[<span class="tok-s">&quot;fold&quot;</span>] == k
-    guess[test] = <span class="tok-f">LinearRegression</span>().<span class="tok-f">fit</span>(X[~test], y[~test]).<span class="tok-f">predict</span>(X[test])</code></pre></div><div class="code-panel" role="tabpanel" id="cattle-p1" aria-labelledby="cattle-t1" hidden><p class="note">Part of the training settings for the pretrained networks (from the timm library).</p><button class="copy" type="button">Copy</button><pre><code>MODEL_CONFIG = {
-    <span class="tok-c"># name in this notebook : settings</span>
-    <span class="tok-s">&quot;efficientnet_b0&quot;</span>:       <span class="tok-f">dict</span>(timm=<span class="tok-s">&quot;efficientnet_b0&quot;</span>,       epochs=<span class="tok-n">25</span>, lr=<span class="tok-n">3e-4</span>, batch=<span class="tok-n">16</span>, size=(<span class="tok-n">224</span>, <span class="tok-n">384</span>), cosine=<span class="tok-k">True</span>,  amp=<span class="tok-k">True</span>,  loss=<span class="tok-s">&quot;smoothl1&quot;</span>),
-    <span class="tok-s">&quot;mobilenetv3_large_100&quot;</span>: <span class="tok-f">dict</span>(timm=<span class="tok-s">&quot;mobilenetv3_large_100&quot;</span>, epochs=<span class="tok-n">25</span>, lr=<span class="tok-n">3e-4</span>, batch=<span class="tok-n">16</span>, size=(<span class="tok-n">224</span>, <span class="tok-n">384</span>), cosine=<span class="tok-k">True</span>,  amp=<span class="tok-k">True</span>,  loss=<span class="tok-s">&quot;smoothl1&quot;</span>),
-    <span class="tok-s">&quot;deit_small&quot;</span>:            <span class="tok-f">dict</span>(timm=<span class="tok-s">&quot;deit_small_patch16_224&quot;</span>, epochs=<span class="tok-n">15</span>, lr=<span class="tok-n">5e-5</span>, batch=<span class="tok-n">16</span>, size=(<span class="tok-n">224</span>, <span class="tok-n">384</span>), cosine=<span class="tok-k">True</span>,  amp=<span class="tok-k">True</span>,  loss=<span class="tok-s">&quot;smoothl1&quot;</span>,
-                                  extra=<span class="tok-f">dict</span>(img_size=(<span class="tok-n">224</span>, <span class="tok-n">384</span>))),
-    <span class="tok-c"># Swin needs height and width divisible by 224 (its window is 7 and it shrinks the photo 32 times), so 224 x 448</span>
-    <span class="tok-s">&quot;swin_tiny&quot;</span>:             <span class="tok-f">dict</span>(timm=<span class="tok-s">&quot;swin_tiny_patch4_window7_224&quot;</span>, epochs=<span class="tok-n">15</span>, lr=<span class="tok-n">5e-5</span>, batch=<span class="tok-n">16</span>, size=(<span class="tok-n">224</span>, <span class="tok-n">448</span>), cosine=<span class="tok-k">True</span>, amp=<span class="tok-k">True</span>, loss=<span class="tok-s">&quot;smoothl1&quot;</span>,
-                                  extra=<span class="tok-f">dict</span>(img_size=(<span class="tok-n">224</span>, <span class="tok-n">448</span>))),
-    <span class="tok-s">&quot;regnety_016&quot;</span>:           <span class="tok-f">dict</span>(timm=<span class="tok-s">&quot;regnety_016&quot;</span>,           epochs=<span class="tok-n">10</span>, lr=<span class="tok-n">1e-4</span>, batch=<span class="tok-n">16</span>, size=(<span class="tok-n">224</span>, <span class="tok-n">384</span>), cosine=<span class="tok-k">True</span>,  amp=<span class="tok-k">True</span>,  loss=<span class="tok-s">&quot;smoothl1&quot;</span>),
-}</code></pre></div></div>
-    <div class="callout"><b>Coming after the defence:</b> results by model, weight class and breed, and the full code on GitHub.</div>
-  </div>
-</section>
-
 </main>
 <footer class="site-footer">
   <div class="wrap foot">
     <div class="foot-logos">
-      <img src="../assets/img/bau-logo.png" alt="Bangladesh Agricultural University logo" width="40" height="40" loading="lazy">
-      <img src="../assets/img/faculty-logo.jpg" alt="Faculty of Animal Husbandry logo" width="40" height="40" loading="lazy">
-      <span>Md Raihan Patwary · Department of Animal Nutrition, Bangladesh Agricultural University, Mymensingh</span>
+      <img src="../assets/img/bau-logo-clear.png" alt="Bangladesh Agricultural University logo" width="77" height="62" loading="lazy">
+      <img src="../assets/img/faculty-logo-clear.png" alt="Faculty of Animal Husbandry logo" width="65" height="62" loading="lazy">
+      <span>Md Raihan Patwary<br>Department of Animal Nutrition, Faculty of Animal Husbandry<br>Bangladesh Agricultural University, Mymensingh</span>
     </div>
     <div class="foot-links">
-      <a href="mailto:raihan.1903065@bau.edu.bd">Email</a><a href="https://github.com/raihan-patwary">GitHub</a><a href="https://www.kaggle.com/mdraihanpatwary02">Kaggle</a><a href="https://www.linkedin.com/in/md-raihan-patwary-bau-animal-nutrition">LinkedIn</a>
+      <a href="mailto:raihan.1903065@bau.edu.bd">Email</a><a href="https://github.com/raihan-patwary">GitHub</a><a href="https://www.kaggle.com/mdraihanpatwary02">Kaggle</a><a href="https://www.linkedin.com/in/md-raihan-patwary-bau-animal-nutrition">LinkedIn</a><a href="../play.html">Play Lab Rescue</a>
     </div>
     <p class="small" style="margin:0;width:100%">Last updated October 2026 · Plain HTML and CSS, hosted on GitHub Pages.</p>
   </div>
