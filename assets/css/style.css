@@ -331,3 +331,4 @@ dialog.peek.closing { animation: peek-out .2s ease forwards; }
 .js .kbadges.in .kbadge { animation: badge-pop .55s cubic-bezier(.2, .8, .3, 1.2) both; animation-delay: calc(var(--i) * 70ms); }
 @media (prefers-reduced-motion: reduce) { .js .kbadges .kbadge { opacity: 1; } .js .kbadges.in .kbadge { animation: none; } }
 @media (max-width: 480px) { .kbadge { width: 52px; } .kbadges { gap: 10px; } }
+.slide img { max-height: 60vh; width: 100%; object-fit: contain; }
