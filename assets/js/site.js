@@ -75,6 +75,16 @@
     items.forEach(el => io.observe(el));
   }
 
+  // Kaggle badges pop in one after another when the strip comes into view
+  const strip = $(".kbadges");
+  if (strip) {
+    $$(".kbadge", strip).forEach((b, k) => b.style.setProperty("--i", k));
+    if ("IntersectionObserver" in window && !calm) {
+      const bo = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { strip.classList.add("in"); bo.disconnect(); } }), { threshold: 0.3 });
+      bo.observe(strip);
+    } else strip.classList.add("in");
+  }
+
   /* ---------- tabs (Quick look panels and code files) ---------- */
   $$('[role="tablist"]').forEach(list => {
     const tabs = $$('[role="tab"]', list);

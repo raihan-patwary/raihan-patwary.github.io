@@ -103,9 +103,8 @@
   <text class="pl-s" x="42" y="58" text-anchor="middle">per animal</text>
 </g>
 </svg></div>
-    <h2 style="margin-top:28px">In short</h2>
-    <ul class="prose"><li><b>The question.</b> Most cattle in Bangladesh are weighed by eye, because scales are costly and hard to move. Can ordinary side-view photos take the scale's place?</li><li><b>The approach.</b> Pretrained deep learning networks (CNNs and vision transformers) read the photos directly; classical models use body-outline measurements cut out with YOLO11. All are compared with a no-photo baseline.</li><li><b>The test.</b> Every model is scored only on animals it has never seen, with all four photos of an animal kept together.</li></ul>
-    <div class="callout">Results will be shared here after the thesis defence.</div>
+    <div class="cs-grid"><div class="cs-block"><h2>Why it matters</h2><p>Most cattle in Bangladesh are weighed by eye, because scales are costly and hard to move to farms and markets. Yet live weight sets the feed, the drug dose and the price, above all before Eid-ul-Azha. A few ordinary photos might take the scale's place.</p></div><div class="cs-block"><h2>What I am doing</h2><ul><li>Data: the public Cow Images Dataset, 513 cattle from Bangladesh with four side-view photos, height, breed and scale weight each.</li><li>Deep learning: nine ImageNet-pretrained networks (CNNs such as ConvNeXt, EfficientNet and ResNet50, and the vision transformers Swin and DeiT) fine-tuned to read weight straight from the photo, plus the small CNN of an earlier study, rebuilt.</li><li>Classical machine learning: YOLO11 cuts the animal out of each photo, its outline is measured, and linear regression, SVR, random forest and gradient boosting predict weight.</li><li>A no-photo baseline (height and breed only) that every model has to beat.</li></ul></div><div class="cs-block"><h2>How it is tested</h2><ul><li>Every model is scored only on animals it has never seen.</li><li>All four photos of a cow stay together, in five folds balanced by weight class.</li><li>Errors are reported per animal, in kg and in percent.</li></ul></div><div class="cs-block"><h2>Where it stands</h2><p>Training and analysis are finished, and the thesis is being written (expected November 2026). The numbers will be shared here after the defence.</p></div></div>
+    
   </div>
 </section>
 </main>

@@ -311,3 +311,23 @@ dialog.peek.closing { animation: peek-out .2s ease forwards; }
 @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .tok-k { color: #c49bff; } :root:not([data-theme="light"]) .tok-s { color: #8fd19e; } :root:not([data-theme="light"]) .tok-f { color: #79b8ff; } :root:not([data-theme="light"]) .tok-n { color: #f0a77c; } }
 @media (prefers-reduced-motion: reduce) { dialog.peek[open], .slide.on, .peek-panel:not([hidden]) { animation: none; } }
 .code-panel p.note { padding-right: 76px; }
+
+/* ---------- project page sections ---------- */
+.cs-grid { display: grid; gap: 18px; grid-template-columns: 1fr; margin-top: 28px; }
+@media (min-width: 820px) { .cs-grid { grid-template-columns: 1fr 1fr; } }
+.cs-block { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 18px 20px; }
+.cs-block h2 { font-size: 1.2rem; margin-bottom: 8px; }
+.cs-block p, .cs-block li { font-size: .97rem; }
+.cs-block ul { margin: 0; padding-left: 20px; }
+.cs-block li { margin-bottom: .45em; }
+.cs-block p:last-child { margin-bottom: 0; }
+
+/* ---------- Kaggle badges ---------- */
+.kbadges { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 20px; }
+.kbadge { width: 64px; height: auto; filter: drop-shadow(0 2px 4px rgba(0, 0, 0, .18)); transition: transform .25s cubic-bezier(.3, 1.6, .5, 1), filter .25s; }
+.kbadge:hover { transform: translateY(-6px) rotate(-8deg) scale(1.12); filter: drop-shadow(0 8px 12px rgba(0, 0, 0, .28)); }
+@keyframes badge-pop { 0% { opacity: 0; transform: scale(.3) rotate(-25deg); } 70% { opacity: 1; transform: scale(1.15) rotate(6deg); } 100% { opacity: 1; transform: none; } }
+.js .kbadges .kbadge { opacity: 0; }
+.js .kbadges.in .kbadge { animation: badge-pop .55s cubic-bezier(.2, .8, .3, 1.2) both; animation-delay: calc(var(--i) * 70ms); }
+@media (prefers-reduced-motion: reduce) { .js .kbadges .kbadge { opacity: 1; } .js .kbadges.in .kbadge { animation: none; } }
+@media (max-width: 480px) { .kbadge { width: 52px; } .kbadges { gap: 10px; } }
